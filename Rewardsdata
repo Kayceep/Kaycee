@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Load the CSV file
+df = pd.read_csv('RewardsData.csv')
+
+# Step 1: Remove the 'Tags' column
+df = df.drop('Tags', axis=1)
+
+# Step 2 & 3: Arrange unique 'City' values in alphabetical order and replace Winston-salem formats
+cities = df['City'].unique()
+cities = [city.replace('winston-salem', 'Winston-Salem').title() for city in cities]
+df['City'] = df['City'].apply(lambda x: x.replace('winston-salem', 'Winston-Salem').title())
+# Step 4: Correct city names to proper case
+df['City'] = df['City'].apply(lambda x: x.title())
+
+# Step 5: Repeat steps 1-4 for the 'City' column (already done)
+
+# Save the modified dataframe to a new CSV file
+df.to_csv('ModifiedRewardsData.csv', index=False)
+
