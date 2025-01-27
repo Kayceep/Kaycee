@@ -63,7 +63,7 @@ merged_df.to_csv('merged_tables.csv', index=False)
 # Database connection
 logging.info('Connecting to the PostgreSQL database')
 postgres_user = 'postgres'
-postgres_password ='kayceep8'  # my password isn't opensource....kindly input yours to make it run
+postgres_password ='postgres'  # my password isn't opensource....kindly input yours to make it run
 postgres_host = 'localhost'
 postgres_port = '5432'
 postgres_db = 'Film'
